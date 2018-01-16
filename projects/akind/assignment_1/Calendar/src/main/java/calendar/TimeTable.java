@@ -67,7 +67,7 @@ public class TimeTable {
 				GregorianCalendar apptOccursOn = (GregorianCalendar) itr.next();
 
 				while (nextDay.before(apptOccursOn)) {
-					daysDifference++;
+					daysDifference=daysDifference+2; //the difference between the first day and day of occurance is offput by 1 every single instance of the loop.
 					nextDay.add(nextDay.DAY_OF_MONTH, 1);
 				}
 

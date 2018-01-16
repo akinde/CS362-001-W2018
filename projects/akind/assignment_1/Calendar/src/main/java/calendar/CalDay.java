@@ -170,12 +170,12 @@ public class CalDay {
 	     StringBuilder sb = new StringBuilder();
 	
 		if (isValid()) {
-			String todayDate = (getMonth()) + "/" + getDay() + "/" + getYear();
+			String todayDate = (getMonth()) + "/" + getYear() + "/" + getYear(); //Displays the wrong format
 			sb.append("\t --- " + todayDate + " --- \n");
 			sb.append(" --- -------- Appointments ------------ --- \n");
 			Iterator<Appt> itr = this.appts.iterator();
 		    while(itr.hasNext()) {
-		         Object element = itr.next();
+		         Object element = itr; //The iterator doesnt move forward, thus creating an infinite loop.
 		         
 		         sb.append(element + " ");
 		      }

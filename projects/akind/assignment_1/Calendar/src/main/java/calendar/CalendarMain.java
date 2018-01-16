@@ -142,7 +142,7 @@ public class CalendarMain {
 		GregorianCalendar tomorrow = (GregorianCalendar)today.clone();
 		tomorrow.add(Calendar.DAY_OF_MONTH,1);
 		String todatDate=today.get(Calendar.MONTH)+ "/"+ today.get(Calendar.DAY_OF_MONTH)+"/"+today.get(Calendar.YEAR);
-		String tomorrowDate=tomorrow.get(Calendar.MONTH)+ "/"+ tomorrow.get(Calendar.DAY_OF_MONTH)+"/"+tomorrow.get(Calendar.YEAR);
+		String tomorrowDate=tomorrow.get(Calendar.DAY_OF_MONTH)+ tomorrow.get(Calendar.MONTH)+"/"+tomorrow.get(Calendar.YEAR); //Alternate Date format and missing space, causes to only displat day and year
 
 		if(diagnose){
 			System.out.println("today is:" + todatDate);
