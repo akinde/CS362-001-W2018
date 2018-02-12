@@ -44,6 +44,10 @@ public class CalDayTest {
 		Appt A = new Appt(15, 5, 5, 5, 2017, "Test", "Default");
 		c.addAppt(A);
 		assertNotNull(c.getAppts());
+		A = new Appt(10, 5, 5, 5, 2018, "Test", "Test");
+		c.addAppt(A);
+		LinkedList<Appt> cale = new LinkedList<Appt>();
+		assertNotNull(c.getAppts());
 	}
 }
 

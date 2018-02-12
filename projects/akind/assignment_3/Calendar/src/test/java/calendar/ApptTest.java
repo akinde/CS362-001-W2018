@@ -102,6 +102,59 @@ public class ApptTest {
 		assertNotNull(A.toString());
 	}
 	
+	@Test
+	public void testIsValid() {
+	Appt A = new Appt(12, 5, 5, 5, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(14, 5, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 5, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(20, 5, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(23, 5, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(25, 5, 5, 5, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(27, 5, 5, 5, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	
+	A = new Appt(16, -2, 5, 5, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(16, -1, 5, 5, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(16, 1, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 25, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 35, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 45, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 59, 5, 5, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 60, 5, 5, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(16, 75, 5, 5, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	
+	A = new Appt(16, 25, -10, 1, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(16, 25, -1, 1, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(16, 25, 1, 1, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 25, 10, 1, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 25, 20, 1, 2018, "Test", "Test");
+	assertTrue(A.getValid());
+	A = new Appt(16, 25, 32, 1, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	A = new Appt(16, 25, 60, 2, 2018, "Test", "Test");
+	assertFalse(A.getValid());
+	
+	}
+	
 }
 
 
