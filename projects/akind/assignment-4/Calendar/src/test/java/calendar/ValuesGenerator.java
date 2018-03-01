@@ -59,7 +59,7 @@ public class ValuesGenerator {
 	 * @return get a random number between MIN_VALUE (inclusive) and  MAX_VALUE (inclusive)    
 	 */
 	public static int getRandomIntBetween(Random random, int min, int max) {
-		
+		 
 		long range       = (long)max - (long)min + 1;
 		long fraction    = (long)(range * random.nextDouble());
 	    int randomNumber = (int)(fraction + min); 

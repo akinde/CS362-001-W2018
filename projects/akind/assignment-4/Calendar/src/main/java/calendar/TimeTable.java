@@ -1,6 +1,7 @@
 
 /*
  * TimeTable.java
+
  *
  */
 package calendar;
@@ -9,7 +10,6 @@ package calendar;
 * This class collects appointments between given two dates.
 * 
 */
-
 import java.util.*;
 
 
@@ -67,12 +67,12 @@ public class TimeTable {
 				GregorianCalendar apptOccursOn = (GregorianCalendar) itr.next();
 
 				while (nextDay.before(apptOccursOn)) {
-					daysDifference++;
-					nextDay.add(nextDay.DAY_OF_MONTH, 1);
+					daysDifference=daysDifference+2; //the difference between the first day and day of occurance is offput by 1 every single instance of the loop.
+					nextDay.add(nextDay.DAY_OF_MONTH, 1); 
 				}
 
 				CalDay calDayOfAppt = (CalDay) calDays.get(daysDifference);
-				calDayOfAppt.addAppt(appt);
+				calDayOfAppt.addAppt(appt); 
 
 			}
 
