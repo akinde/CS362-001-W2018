@@ -1,0 +1,12 @@
+1) The hours that were not acceptable were less than or equal to 0 or less than or equal to 23, instead of being exclusive, making the 1st and 24th hour an invalid hour.
+2) Every time I added the second appointment, it continuously ran until I had to force stop the application. inspected the method and found that on line 77 where it checks 
+if the Appt at i’s hour is less than the argument Appt’s hour, it adds the Appt but never returns from the method, causing it to add the same Appt multiple times. It also 
+breaks out of the for loop and adds the Appt one more time as well.
+3)If you just initialize a CalDay but don’t pass it a GregorianCalendar variable, then it will be invalid, and the iterator method will return a null. Upon further inspection, 
+it seemed whenever the CalDay was valid it would return null and if it was invalid it would return an iterator to some unknown linked list in memory, because of the negation of 
+isValid() at line 104.
+4) Every time I passed in the number representing the month of February, it was ALWAYS a leap year. instead of the conditional being an AND statement, it was an OR conditional. 
+This made it where if it was a leap year, that is the year is a multiple of four, it worked fine, but if it was the month of February, it would be always be a leap year, making 
+the number of days in February always 29 instead of 28.
+5) At the end of the run, it did not show all the appointments within the given range of dates, it showed one instead of 3 appointments like it should have. This means getApptRange() 
+in TimeTable.java isn’t working properly. When I investigated it, the for loop at line 53 incremented by 2 instead of 1 like it should
