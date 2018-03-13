@@ -86,7 +86,6 @@ public class CalDayRandomTest {
                 GregorianCalendar gregorianCalendar = getRandomGregorianCalendar(random);
                 CalDay calDay = new CalDay(gregorianCalendar);
                 LinkedList<Appt> appts = new LinkedList<Appt>();
-                System.out.println("Checkpoint three\n");
                 boolean goodAppt;
                 for (int i = 0; i < 10; i++) {
                     goodAppt = ValuesGenerator.getBoolean((float) .5, random);

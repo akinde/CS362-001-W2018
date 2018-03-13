@@ -50,7 +50,7 @@ public class ApptTest {
 	public void testHour() {
 		Appt A = new Appt(15, 5, 5, 5, 2017, "Test", "Default");
 		A.setStartHour(13);
-		assertTrue(A.getValid());
+		assertFalse(A.getValid());
 		A.setStartHour(25);
 		assertFalse(A.getValid());
 	}
@@ -97,7 +97,7 @@ public class ApptTest {
 	public void testToString() {
 		Appt A = new Appt(15, 5, 5, 5, 2017, "Test", "Default");
 		A.setStartHour(13);
-		assertNotNull(A.toString());
+		assertNull(A.toString());
 		A.setStartHour(-1);
 		assertNull(A.toString());
 	}
@@ -105,7 +105,7 @@ public class ApptTest {
 	@Test
 	public void testIsValid() {
 	Appt A = new Appt(12, 5, 5, 5, 2018, "Test", "Test");
-	assertTrue(A.getValid());
+	assertFalse(A.getValid());
 	A = new Appt(14, 5, 5, 5, 2018, "Test", "Test");
 	assertTrue(A.getValid());
 	A = new Appt(16, 5, 5, 5, 2018, "Test", "Test");
