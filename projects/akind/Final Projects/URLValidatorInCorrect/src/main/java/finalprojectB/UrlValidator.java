@@ -270,7 +270,6 @@ public class UrlValidator implements Serializable {
      */
     public UrlValidator(String[] schemes, RegexValidator authorityValidator, long options) {
         this.options = options;
-
         if (isOn(ALLOW_ALL_SCHEMES)) {
             allowedSchemes = Collections.emptySet();
         } else {
@@ -298,7 +297,7 @@ public class UrlValidator implements Serializable {
      * @return true if the url is valid.
      */
     public boolean isValid(String value) {
-        if (value == null) {
+    	if (value == null) {
             return false;
         }
 
@@ -314,10 +313,10 @@ public class UrlValidator implements Serializable {
         }
 
         String authority = urlMatcher.group(PARSE_URL_AUTHORITY);
-
-        if ("http".equals(scheme)) {// Special case - file: allows an empty authority
+        
+        if ("http".equals(scheme)) {// Special case - file: allows an empty authority ***BUG ("http")****
             if (authority != null) {
-                if (authority.contains(":")) { // but cannot allow trailing :
+                if (authority.contains(":")) {// but cannot allow trailing :
                     return false;
                 }
             }
@@ -340,8 +339,7 @@ public class UrlValidator implements Serializable {
         if (!isValidFragment(urlMatcher.group(PARSE_URL_FRAGMENT))) {
             return false;
         }
-
-        return true;
+    	return true;
     }
 
     /**
